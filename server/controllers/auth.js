@@ -17,7 +17,7 @@ const registerUser = async (req, res) => {
             process.env.JWT_SECRET, // secret key — keep this in .env
             { expiresIn: '7d' }
         );
-        res.status(201).json({ token })
+        res.status(201).json({ token, userId: newUser._id });
     }
     catch (error) {
         res.status(500).json({ message: error.message });
@@ -41,7 +41,7 @@ const loginUser= async(req,res)=>{
             process.env.JWT_SECRET, // secret key — keep this in .env
             { expiresIn: '7d' }
         );
-        res.status(200).json({token});
+        res.status(200).json({ token, userId: existingUser._id });
     }
     catch(error)
     {
