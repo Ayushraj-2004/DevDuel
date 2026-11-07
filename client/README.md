@@ -1,16 +1,18 @@
-# React + Vite
+# DevDuel client
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+React and Vite frontend for the DevDuel real-time quiz battle platform.
 
-Currently, two official plugins are available:
+## Run locally
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+1. Install dependencies with `npm install`.
+2. Copy `.env.example` to `.env.local` if the API is not at `http://localhost:3000`.
+3. Start the frontend with `npm run dev`.
 
-## React Compiler
+The backend must be running with a configured MongoDB connection for sign-in,
+profiles, matchmaking, and live battles. `VITE_API_URL` sets the shared HTTP and
+Socket.IO server origin; it defaults to `http://localhost:3000`.
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## Verify
 
-## Expanding the ESLint configuration
-
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+- `npm run build` creates the production frontend in `dist`.
+- `npm run lint` checks the client source.
